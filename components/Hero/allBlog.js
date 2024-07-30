@@ -37,19 +37,17 @@ export function AllBlog() {
         }
         setLoading(false);
       });
-  }
+    }
 
   return (
     <div className="container mx-auto">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 px-8 bg-white">
         {articles.map((item) => (
-          <div key={item.id} className="shadow-lg card bg-base-100">
-            <div className="card-body">
+          <div key={item.id} className="shadow-lg card bg-base-100 border-[#E8E8EA] border-[1px]">
+            <div className="card-body border-gray-400 border-1 px-0 md:p-4 ">
               <div className="badge badge-primary">{item.tag_list[0]}</div>
-              <Image src={item.social_image} width={500} height={500} className="aspect-video object-cover bg-slate-500"/>
-              <Link href={item.url} target="_blank">
-                {item.title}
-              </Link>
+              <Image src={item.social_image} width={500} height={500} className="aspect-video object-cover bg-slate-500 rounded-sm "/>
+              <Link href={item.path}>{item.title}</Link>
               <div className="flex items-center justify-around">
                 <Image
                   src={item.user.profile_image_90}
@@ -66,7 +64,7 @@ export function AllBlog() {
 
       {!ended && (
         <div className="py-16 text-center" onClick={LoadMore}>
-          <button disabled={loading} className="btn btn-lg btn-accent">
+          <button disabled={loading} class="btn btn-lg btn-accent ">
             {loading && <span className="loading loading-spinner"></span>}
             Load More
           </button>

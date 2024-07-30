@@ -1,6 +1,6 @@
 
 export function Nav(){
     return(
-        <div>aa</div>
+        <div class="bg-red-800 w-[100px]"></div>
     );
 }
