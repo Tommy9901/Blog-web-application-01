@@ -1,10 +1,13 @@
 import { Nav } from "@/components/Header/Nav";
+import { TopHeader } from "@/components/Header/TopHeader";
+
 import { AllBlog } from "@/components/Hero/allBlog";
 
 export default function Home() {
   return (
-    <main className="max-w-[1216px]">
+    <main className="max-w-[1216px] bg-white">
       <Nav />
+     <TopHeader />
       <AllBlog />
     </main>
   );

@@ -42,7 +42,7 @@ export function AllBlog() {
   return (
     <div className="container mx-auto">
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 px-8 bg-white">
-        {articles.map((item) => (
+        {articles.map((item,) => (
           <div key={item.id} className="shadow-lg card bg-base-100 border-[#E8E8EA] border-[1px]">
             <div className="card-body border-gray-400 border-1 px-0 md:p-4 ">
               <div className="badge badge-primary">{item.tag_list[0]}</div>
