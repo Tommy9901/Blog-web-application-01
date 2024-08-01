@@ -20,7 +20,7 @@ export const TopHeader = () => {
     
 
   return (
-    <div className="container mx-auto px-8 mb-[100px]">
+    <div className="container mx-auto px-8 mb-[100px] mt-[100px]">
         <div className="carousel w-full mb-10">
             {articles.map((item, index) => (
                 <div key={item.id} id={`slide${index}`} className="carousel-item relative w-full">
