@@ -5,14 +5,14 @@ import { FaLinkedin } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#E8E8EA]">
+    <div className="">
 
-        <div className="container mx-auto px-8 ">
+        <div className="container mx-auto px-8 dark:text-[#D1D5DB] dark:bg-[#030712]">
             <div >
                 <div className="md:flex md:gap-5 md:mb-[25px] pt-16">
                     <div className="hidden md:block">
                         <div className="mb-6 ">
-                            <h3 className="font-semibold text-lg text-[#181A2A] mb-3">About</h3>
+                            <h3 className="font-semibold text-lg text-[#181A2A] mb-3 dark:text-[#696A75]">About</h3>
                             <p className="font-normal text-base text-[#696A75] max-w-[280px] md:max-w-[320px]">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -38,14 +38,14 @@ export const Footer = () => {
                         <FaLinkedin />
                     </div>
                 </div>
-                <div className=" py-5 md:flex md:justify-between md:items-center md:border-t-[1px]">
+                <div className=" py-5 md:flex md:justify-between md:items-center md:border-t-[1px] ">
                     <div className="flex justify-center">
-                        <img src="/Footer-Logo.png" alt="" />
+                        <img src="/Footer-Logo.png" alt="Footer-logo" className="mr-3 bg-white rounded-lg px-1 py-1"/>
                         <div>
                         <p className="font-normal text-xl">
                             Meta <span className="font-extrabold text-xl">Blog</span>
                         </p>
-                        <p className="font-normal text-base text-[#3B3C4A]">
+                        <p className="font-normal text-base text-[#3B3C4A] dark:text-[#D1D5DB]">
                             © All Rights Reserved.
                         </p>
                         </div>

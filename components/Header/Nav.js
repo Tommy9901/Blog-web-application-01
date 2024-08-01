@@ -10,17 +10,17 @@ import { IoMdClose } from "react-icons/io";
 const navigation = [
   {
     name: "Home",
-    link: "/home",
+    link: "/",
   },
 
   {
     name: "Blog",
-    link: "/blog",
+    link: "/Blog",
   },
 
   {
     name: "Contact",
-    link: "/contact",
+    link: "/Contact",
   },
 ];
 
@@ -47,13 +47,13 @@ export function Nav() {
 
   return (
     <div className="container mx-auto px-8  max-w-[1215px]">
-      <div className="flex justify-between dark:text-[#D1D5DB] dark:bg-[#030712] py-8 px-3">
+      <div className="flex justify-between dark:text-[#D1D5DB] dark:bg-[#030712] rounded py-8 px-3">
         <div className="">
-          <img src="/Logo.png" alt="logo" className="dark:z-10" />
+          <img  src="/Logo.png" alt="logo" className="bg-white rounded-lg px-1 py-1" />
         </div>
 
         <div className="flex gap-[24px] py-[0] items-center">
-          <Link href={"/"} className="hidden lg:block">
+          <Link href={"/"} className="hidden lg:block dark:hover:text-white">
             Home
           </Link>
           <Link href={"/Blog"} className="hidden lg:block">
@@ -102,7 +102,7 @@ export function Nav() {
               >
                 <div className="flex items-center justify-between p-4 ">
                   <div className="text-2xl font-bold ">
-                    <img src="/Logo.png" alt="logo" className="" />
+                    <img src="/Logo.png" alt="logo" className="bg-white rounded-lg px-1 py-1" />
                   </div>
                   <button onClick={closeMenu}>
                     <IoMdClose />
@@ -127,8 +127,10 @@ export function Nav() {
                     <div>Switch Theme</div>
                     <IoSunnyOutline onClick={modeHandler} />
                   </div>
-                  <button className=" py-2.5 bg-gray-900 text-gray-50 rounded-lg text-sm font-medium">
-                    Download CV
+                  <button className=" py-2.5 bg-gray-900 dark:bg-white dark:text-gray-500 text-gray-50 rounded-lg text-sm font-medium">
+                    <p className="font-normal text-xl">
+                      Download <span className="font-extrabold text-xl">Blog</span>
+                    </p>
                   </button>
                 </div>
               </div>

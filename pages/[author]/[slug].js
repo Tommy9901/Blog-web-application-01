@@ -40,7 +40,7 @@ export default function Page(){
 
     return(
       
-        <div className="container mx-auto bg-white">
+        <div className="container mx-auto bg-white dark:text-[#D1D5DB] dark:bg-[#030712]">
           <Nav />
             <div className="mt-[100px] mb-20">
               <div className="prose mx-auto">{article.title}</div>

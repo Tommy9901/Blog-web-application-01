@@ -40,10 +40,10 @@ export function AllBlog() {
     }
 
   return (
-    <div className="container mx-auto">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 px-8 bg-white">
+    <div className="container mx-auto dark:text-[#D1D5DB] dark:bg-[#111827] pb-16">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 px-8 bg-white dark:text-[#D1D5DB] dark:bg-[#111827]">
         {articles.map((item,) => (
-          <div key={item.id} className="shadow-lg card bg-base-100 border-[#E8E8EA] border-[1px]">
+          <div key={item.id} className="shadow-lg card bg-base-100 border-[#E8E8EA] border-[1px] dark:text-[#D1D5DB] dark:bg-[#030712]">
             <div className="card-body border-gray-400 border-1 px-0 md:p-4 ">
               <div className="badge badge-primary">{item.tag_list[0]}</div>
               <Image src={item.social_image} width={500} height={500} className="aspect-video object-cover bg-slate-500 rounded-sm "/>
@@ -64,7 +64,7 @@ export function AllBlog() {
 
       {!ended && (
         <div className="py-16 text-center" onClick={LoadMore}>
-          <button disabled={loading} class="btn btn-lg btn-accent ">
+          <button disabled={loading} class="btn btn-lg  ">
             {loading && <span className="loading loading-spinner"></span>}
             Load More
           </button>

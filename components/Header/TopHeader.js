@@ -20,11 +20,11 @@ export const TopHeader = () => {
     
 
   return (
-    <div className="container mx-auto px-8 mb-[100px] mt-[100px]">
-        <div className="carousel w-full mb-10">
+    <div className="container mx-auto px-8 py-[100px]  dark:text-[#D1D5DB] dark:bg-[#111827]">
+        <div className="carousel w-full ">
             {articles.map((item, index) => (
                 <div key={item.id} id={`slide${index}`} className="carousel-item relative w-full">
-                    <Image src={item.social_image} width={1216} height={600} className="w-full rounded-xl" />
+                    <Image src={item.social_image} width={1216} height={600} className="w-full rounded-xl dark:border-2" />
                     <div className="absolute md:z-10 left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <Link href={`#slide${index - 1}`} className="btn btn-circle">❮</Link>
                         <Link href={`#slide${index + 1}`} className="btn btn-circle">❯</Link>
@@ -36,7 +36,7 @@ export const TopHeader = () => {
                     </div>
                 </div>
                     
-            ))};
+            ))}
         </div>
     </div>
   );
