@@ -31,12 +31,12 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                <div className="p-[29px] bg-[#F6F6F7] rounded-lg dark:text-[#D1D5DB] dark:bg-[#030712]">
+                <div className="p-[29px] bg-[#F6F6F7] rounded-lg dark:text-[#D1D5DB] dark:bg-[#030712] ">
                     <h1>Leave a Message</h1>
                     <div>
-                        <div className="md:flex md:gap-7 mt-6 mb-5 ">
-                            <input type="text" placeholder="Your name" className="input input-bordered w-[225px] h-[38px] dark:text-[#D1D5DB] dark:bg-[#111827] mb-5" />
-                            <input type="text" placeholder="Your Email" className="input input-bordered w-[225px] h-[38px] dark:text-[#D1D5DB] dark:bg-[#111827]" />
+                        <div className="md:flex sm:gap-5 mt-5 mb-4 ">
+                            <input type="text" placeholder="Your name" className="input input-bordered sm:w-[225px] w-[150px] h-[38px] dark:text-[#D1D5DB] dark:bg-[#111827] mb-5 mr-4" />
+                            <input type="text" placeholder="Your Email" className="input input-bordered sm:w-[225px] w-[150px] h-[38px] dark:text-[#D1D5DB] dark:bg-[#111827] sm:ml-4" />
                         </div>
                         <div className="max-w-[478px] mb-5">
                             <input type="text" placeholder="SUBJECT" className="input input-bordered h-[35px] w-full dark:text-[#D1D5DB] dark:bg-[#111827]" />

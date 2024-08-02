@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="max-w-[1216px] bg-white dark:text-[#D1D5DB] dark:bg-[#030712]">
       <Nav />
-     <TopHeader />
+      <TopHeader />
       <AllBlog />
       <Footer />
     </main>

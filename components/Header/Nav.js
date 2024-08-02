@@ -85,7 +85,7 @@ export function Nav() {
 
           <div className="flex justify-between  gap-4 lg:hidden z-20 ">
             <button onClick={openMenu}>
-              <IoMdMenu />
+              <IoMdMenu size={35} color={"#1A1A1A"}/>
             </button>
 
             <div>

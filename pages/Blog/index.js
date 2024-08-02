@@ -46,15 +46,16 @@ export function Blog() {
         <Nav />
         <div className="container mx-auto bg-white dark:text-[#D1D5DB] dark:bg-[#111827]">
         <div className="font-bold text-2xl px-8 mb-8 dark:bg-[#111827] pt-10">All Blog Post</div>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 px-8 bg-white mb-[100px] dark:text-[#D1D5DB] dark:bg-[#111827]">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 px-8 bg-white mb-[50px] dark:text-[#D1D5DB] dark:bg-[#111827]">
             {articles.map((item,) => (
             <div key={item.id} className="shadow-lg card bg-base-100 border-[#E8E8EA] border-[1px] dark:text-[#D1D5DB] dark:bg-[#030712]">
                 <div className="card-body border-gray-400 border-1 px-0 md:p-4 ">
                 <div className="badge badge-primary">{item.tag_list[0]}</div>
-                <Image src={item.social_image} width={500} height={500} className="aspect-video object-cover bg-slate-500 rounded-sm "/>
+                <Image alt="blog" src={item.social_image} width={500} height={500} className="aspect-video object-cover bg-slate-500 rounded-sm "/>
                 <Link href={item.path}>{item.title}</Link>
                 <div className="flex items-center justify-around">
                     <Image
+                    alt="profile"
                     src={item.user.profile_image_90}
                     width={50}
                     height={50}

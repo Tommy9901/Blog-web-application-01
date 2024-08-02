@@ -19,25 +19,20 @@ export function AllBlog() {
     LoadMore();
   }, []);
 
-  function LoadMore() {
+  async function LoadMore() {
     setLoading(true);
 
-    fetch(
-      `https://dev.to/api/articles?username=paul_freeman&page=${page}&per_page=${pageSize}`
-    )
-      .then((responce) => {
-        return responce.json();
-      })
-      .then((newArticles) => {
-        const updatedArticles = articles.concat(newArticles);
-        setArticles(updatedArticles);
-        setPage(page + 1);
-        if (newArticles.length < pageSize) {
-          setEnded(true);
-        }
-        setLoading(false);
-      });
+    const responce = await fetch(`https://dev.to/api/articles?username=paul_freeman&page=${page}&per_page=${pageSize}`)
+    const newArticles = await responce.json();
+    
+    const updatedArticles = articles.concat(newArticles);
+    setArticles(updatedArticles);
+    setPage(page + 1);
+    if (newArticles.length < pageSize) {
+      setEnded(true);
     }
+    setLoading(false);
+  }
 
   return (
     <div className="container mx-auto dark:text-[#D1D5DB] dark:bg-[#111827] pb-16">
@@ -45,11 +40,12 @@ export function AllBlog() {
         {articles.map((item,) => (
           <div key={item.id} className="shadow-lg card bg-base-100 border-[#E8E8EA] border-[1px] dark:text-[#D1D5DB] dark:bg-[#030712]">
             <div className="card-body border-gray-400 border-1 px-0 md:p-4 ">
-              <div className="badge badge-primary">{item.tag_list[0]}</div>
-              <Image src={item.social_image} width={500} height={500} className="aspect-video object-cover bg-slate-500 rounded-sm "/>
+              <div className="badge badge-primary py-3 px-4 rounded-lg">{item.tag_list[0]}</div>
+              <Image alt="img" src={item.social_image} width={600} height={500} className="aspect-video object-cover bg-slate-500 rounded-sm "/>
               <Link href={item.path}>{item.title}</Link>
               <div className="flex items-center justify-around">
                 <Image
+                  alt="profile"
                   src={item.user.profile_image_90}
                   width={50}
                   height={50}
@@ -64,7 +60,7 @@ export function AllBlog() {
 
       {!ended && (
         <div className="py-16 text-center" onClick={LoadMore}>
-          <button disabled={loading} class="btn btn-lg  ">
+          <button disabled={loading} className="btn btn-lg  ">
             {loading && <span className="loading loading-spinner"></span>}
             Load More
           </button>

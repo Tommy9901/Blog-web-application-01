@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -19,17 +20,17 @@ export const Footer = () => {
                                 enim ad minim veniam
                             </p>
                         </div>
-                        <div className="font-normal text-base text-[#3B3C4A]">
+                        <div className="font-normal text-base text-[#696A75]">
                             <div>Email : info@jstemplate.net</div>
                             <div>Phone : 880 123 456 789</div>
                         </div>
                     </div>
                     <div className="text-center mb-[30px] lg:w-[521px] md:w-[250px]">
-                        <ul className="text-[#3B3C4A] font-normal text-base">
-                            <li>Home</li>
-                            <li>Blog</li>
-                            <li>Contact</li>
-                        </ul>
+                        <div className="flex flex-col text-[#696A75] font-normal text-base">
+                            <Link href={"/"}>Home</Link>
+                            <Link href={"/Blog"}>Blog</Link>
+                            <Link href={"/Contact"}>Contact</Link>
+                        </div>
                     </div>
                     <div className="flex justify-center gap-[27px] mb-[30px]">
                         <FaFacebook />
