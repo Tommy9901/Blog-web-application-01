@@ -46,8 +46,8 @@ export function Nav() {
   }
 
   return (
-    <div className="container mx-auto px-8  max-w-[1215px]">
-      <div className="flex justify-between dark:text-[#D1D5DB] dark:bg-[#030712] rounded py-8 px-3">
+    <div className="container mx-auto px-8  max-w-[1215px]  dark:text-[#D1D5DB] dark:bg-[#030712]">
+      <div className="flex justify-between  rounded py-8 px-3">
         <div className="">
           <img  src="/Logo.png" alt="logo" className="dark:bg-white rounded-lg px-1 py-1" />
         </div>

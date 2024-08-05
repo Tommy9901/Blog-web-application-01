@@ -4,10 +4,10 @@ import { TopHeader } from "@/components/Header/TopHeader";
 
 const Contact = () => {
   return (
-    <div className="bg-white dark:bg-[#030712]">
-        <Nav />
-        <div className="container mx-auto bg-white max-w-[1215px] dark:text-[#D1D5DB] dark:bg-[#111827]">
-            <div className="md:mx-[200px] mx-10 mt-[100px] mb-[166px] py-10">
+    
+        
+        <div className="container mx-auto bg-white max-w-[1215px] dark:text-[#D1D5DB] dark:bg-[#111827] py-[100px]">
+            <div className="md:mx-[200px] mx-10 py-10">
                 <div className="mb-[39px]">
                     <div className="mb-5 mt-3 ">
                         <h2 className="text-4xl font-semibold">Contact Us</h2>
@@ -49,9 +49,6 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-        <Footer />
-
-    </div>
   );
 };
 

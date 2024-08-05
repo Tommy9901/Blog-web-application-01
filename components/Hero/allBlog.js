@@ -1,66 +1,77 @@
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime"; // ES 2015
-import "@/components/dayjs-mn"; // ES 2015
+import { ArticleCard } from "./ArticleCard";
 
-dayjs.extend(relativeTime);
+const tags = [
+  {value: "all", name: "Бүгд"},
+  {value: "beginners", name: "Анхан шат"},
+  {value: "frontend", name: "Front-end"},
+  {value: "javascript", name: "JavaScript"},
+  {value: "webdev", name: "Web Dev"},
+];
 
-const pageSize = 6;
+
+const pageSize = 9;
 
 export function AllBlog() {
-  const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
   const [ended, setEnded] = useState(false);
+  const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    LoadMore();
-  }, []);
+  const [selectedCategory, setSelectedCategory] = useState("")
 
-  async function LoadMore() {
+  async function loadFirstArticles() {
     setLoading(true);
 
-    const responce = await fetch(`https://dev.to/api/articles?username=paul_freeman&page=${page}&per_page=${pageSize}`)
-    const newArticles = await responce.json();
-    
-    const updatedArticles = articles.concat(newArticles);
-    setArticles(updatedArticles);
-    setPage(page + 1);
-    if (newArticles.length < pageSize) {
-      setEnded(true);
-    }
+    const responce = await fetch(`https://dev.to/api/articles?username=paul_freeman&tag=${selectedCategory}&per_page=${pageSize}`)
+    const tagArticles = await responce.json();
+    setArticles(tagArticles);
+    setPage(1);
+
     setLoading(false);
   }
 
+  async function loadNextArticles(){
+    setLoading(true);
+
+    const nextPage = page + 1;
+
+    const responce = await fetch(`https://dev.to/api/articles?username=paul_freeman&tag=${selectedCategory}&per_page=${pageSize}&page=${nextPage}`)
+    const nextArticles = await responce.json();
+
+    setArticles([...articles, ...nextArticles]);
+    setPage(nextPage);
+    // if(nextArticles.length < pageSize) {
+    //   setEnded(true);
+    // }
+
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    loadFirstArticles();
+  }, [selectedCategory]);
+
   return (
-    <div className="container mx-auto dark:text-[#D1D5DB] dark:bg-[#111827] pb-16">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 px-8 bg-white dark:text-[#D1D5DB] dark:bg-[#111827]">
-        {articles.map((item,) => (
-          <div key={item.id} className="shadow-lg card bg-base-100 border-[#E8E8EA] border-[1px] dark:text-[#D1D5DB] dark:bg-[#030712]">
-            <div className="card-body border-gray-400 border-1 px-0 md:p-4 ">
-              <div className="badge badge-primary py-3 px-4 rounded-lg">{item.tag_list[0]}</div>
-              <Image alt="img" src={item.social_image} width={600} height={500} className="aspect-video object-cover bg-slate-500 rounded-sm "/>
-              <Link href={item.path}>{item.title}</Link>
-              <div className="flex items-center justify-around">
-                <Image
-                  alt="profile"
-                  src={item.user.profile_image_90}
-                  width={50}
-                  height={50}
-                />
-                <div className="">{item.user.name}</div>
-                <div>{dayjs(item.published_at).locale("mn").fromNow()}</div>
-              </div>
-            </div>
+    <div className="container mx-auto dark:text-[#D1D5DB] dark:bg-[#111827] px-8 pb-16">
+      <div className="text-2xl font-bold text-[#181A2A] dark:text-[#D1D5DB]">All Blog Post</div>
+      <div className="flex gap-4  py-8">
+        {tags.map((tag) => (
+          <div key={tag.value} className={`cursor-pointer font-bold hover:text-orange-400/40 ${selectedCategory === tag.value ? "text-green-600" : ""}`} onClick={() => setSelectedCategory(tag.value)}>
+            {tag.name}
           </div>
         ))}
       </div>
 
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5  bg-white dark:text-[#D1D5DB] dark:bg-[#111827]">
+        {articles.map((item,) => (
+          <ArticleCard key={item.id} article={item}/>
+        ))}
+      </div>
+
       {!ended && (
-        <div className="py-16 text-center" onClick={LoadMore}>
-          <button disabled={loading} className="btn btn-lg  ">
+        <div className="py-16 text-center">
+          <button disabled={loading} className="btn btn-lg" onClick={loadNextArticles}>
             {loading && <span className="loading loading-spinner"></span>}
             Load More
           </button>
