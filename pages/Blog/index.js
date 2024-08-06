@@ -1,5 +1,3 @@
-import { Nav } from "@/components/Header/Nav";
-import { Footer } from "@/components/Footer/Footer";
 import { useEffect, useState } from "react";
 import { ArticleCard } from "@/components/Hero/ArticleCard";
 

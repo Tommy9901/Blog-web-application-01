@@ -1,6 +1,3 @@
-import { Footer } from "@/components/Footer/Footer";
-import { Nav } from "@/components/Header/Nav";
-import { TopHeader } from "@/components/Header/TopHeader";
 
 const Contact = () => {
   return (
@@ -31,7 +28,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                <div className="p-[29px] bg-[#F6F6F7] rounded-lg dark:text-[#D1D5DB] dark:bg-[#030712] ">
+                <div className="p-[29px] bg-[#F6F6F7] rounded-lg dark:text-[#D1D5DB] dark:bg-[#030712] dark:border-white dark:border-[1px]">
                     <h1>Leave a Message</h1>
                     <div>
                         <div className="md:flex sm:gap-5 mt-5 mb-4 ">

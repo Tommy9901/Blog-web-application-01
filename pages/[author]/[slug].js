@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import parse from 'html-react-parser';
 
 import { useRouter } from 'next/router'
-import { Nav } from "@/components/Header/Nav";
-import { Footer } from "@/components/Footer/Footer";
+
+
 
 export default function Page(){
-    <Nav />
+  
     const [article, setArticle] = useState();
     const [loading, setLoading] = useState(false);
 
@@ -40,13 +40,12 @@ export default function Page(){
 
     return(
       
-        <div className="container mx-auto bg-white dark:text-[#D1D5DB] dark:bg-[#030712]">
-          <Nav />
-            <div className="mt-[100px] mb-20">
-              <div className="prose mx-auto">{article.title}</div>
-              <div className="prose mx-auto">{parse(article.body_html)}</div>
-            </div>
-            <Footer />
-        </div>
+      <div className="container mx-auto bg-white dark:text-[#D1D5DB] dark:bg-[#111827] py-10">
+        <div className="">
+          <div className="prose mx-auto">{article.title}</div>
+          <div className="prose mx-auto">{parse(article.body_html)}</div>
+         </div>
+           
+      </div>
     );
 }
