@@ -4,7 +4,7 @@ import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return(
-    <div className=" bg-white dark:text-[#D1D5DB] dark:bg-[#030712]">
+    <div className="max-w-[1216px] mx-auto bg-white dark:text-[#D1D5DB] dark:bg-[#030712]">
       <Nav />
       <Component {...pageProps} />
       <Footer />

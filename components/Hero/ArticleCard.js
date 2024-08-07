@@ -9,8 +9,8 @@ dayjs.extend(relativeTime);
 export function ArticleCard({article}){
     return(
         <div key={article.id} className="shadow-lg card bg-base-100 border-[#E8E8EA] border-[1px] dark:text-[#D1D5DB] dark:bg-[#030712]">
-            <div className="card-body border-gray-400 border-1 px-0 md:p-4 ">
-                <div className="flex-wrap ">{article.tag_list.map((tag) => (
+            <div className="card-body border-gray-400 border-1 px-0 md:p-4  ">
+                <div className="flex flex-wrap gap-2">{article.tag_list.map((tag) => (
                   <div className="badge primary">{tag}</div>
                 ))}
                 </div>

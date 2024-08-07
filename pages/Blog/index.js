@@ -15,7 +15,7 @@ export function Blog() {
 
   async function LoadMore() {
     setLoading(true);
-    const responce = await fetch(`https://dev.to/api/articles?username=paul_freeman&page=${page}&per_page=${pageSize}`)
+    const responce = await fetch(`https://dev.to/api/articles?username=copilotkit&page=${page}&per_page=${pageSize}`)
     const newArticles = await responce.json();
      
     const updatedArticles = articles.concat(newArticles);
