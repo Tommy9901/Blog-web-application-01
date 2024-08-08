@@ -7,7 +7,7 @@ export const Trending = () => {
     const [articles, setArticles] = useState([]);
   
       useEffect(() => {
-          fetch(`https://dev.to/api/articles?username=copilotkit`)
+          fetch(`https://dev.to/api/articles?`)
             .then((responce) => {
               return responce.json();
             })
