@@ -1,5 +1,5 @@
-import { Footer } from "@/components/Footer/Footer";
-import { Nav } from "@/components/Header/Nav";
+"use client"
+
 import Link from "next/link";
 
 export default function Custom404() {

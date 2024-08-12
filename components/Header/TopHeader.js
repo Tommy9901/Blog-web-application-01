@@ -32,7 +32,7 @@ export const TopHeader = () => {
                     <div className="hidden md:block absolute bg-slate-100/60 rounded-lg text-black bottom-3 left-3 md:p-6 ">
                         <div className="badge badge-primary text-sm font-medium p-4 rounded-lg">{item.tag_list[0]}</div>
                         <div className="pt-4 pb-6 text-4xl font-semibold">{item.title}</div>
-                        <div className="font-normal text-base text-[#97989F]">{dayjs(item.published_at).format("YYYY/ MM/ d")}</div>
+                        <div className="font-normal text-base">{dayjs(item.published_at).format("YYYY/ MM/ d")}</div>
                     </div>
                 </div>
             ))}

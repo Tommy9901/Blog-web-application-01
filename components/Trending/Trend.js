@@ -7,7 +7,7 @@ export const Trending = () => {
     const [articles, setArticles] = useState([]);
   
       useEffect(() => {
-          fetch(`https://dev.to/api/articles?`)
+          fetch(`https://dev.to/api/articles?username=copilotkit`)
             .then((responce) => {
               return responce.json();
             })
@@ -17,7 +17,7 @@ export const Trending = () => {
       }, []);
 
     return(
-        <div className="container mx-auto px-7 py-[100px] dark:text-[#D1D5DB]">
+        <div className="container mx-auto px-7 py-[100px] dark:text-white">
             <div className="font-semibold text-2xl mb-[30px]">Trending</div>
             <div className="carousel w-full rounded gap-5 ">
                 {articles.map((item) => (

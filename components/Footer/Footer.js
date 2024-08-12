@@ -9,7 +9,7 @@ export const Footer = () => {
     <div className="dark:text-[#D1D5DB] dark:bg-[#030712]">
 
         <div className="container mx-auto px-8 dark:text-[#D1D5DB] dark:bg-[#030712]">
-            <div >
+            <div>
                 <div className="md:flex md:gap-5 md:mb-[25px] pt-16">
                     <div className="hidden md:block">
                         <div className="mb-6 ">

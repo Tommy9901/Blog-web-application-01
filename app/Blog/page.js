@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import { ArticleCard } from "@/components/Hero/ArticleCard";
 
@@ -52,4 +54,3 @@ export function Blog() {
 }
 
 export default Blog;
-
