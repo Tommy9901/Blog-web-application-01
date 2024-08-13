@@ -109,9 +109,9 @@ export function Nav() {
             </label>
           </div>
           <div className="hidden lg:block">
-            <label className="input input-bordered flex items-center gap-2 bg-gray-100">
+            <form action='/Search' className="input input-bordered flex items-center gap-2 bg-gray-100">
               <input
-                href="/Search"
+                name='q'
                 type="text"
                 className="grow dark:text-black"
                 placeholder="Search"
@@ -128,7 +128,7 @@ export function Nav() {
                   clipRule="evenodd"
                 />
               </svg>
-            </label>
+            </form>
           </div>
 
           <div className="flex justify-between  gap-4 lg:hidden z-20 dark:text-white">
