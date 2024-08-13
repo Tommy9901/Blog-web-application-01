@@ -8,7 +8,7 @@ import { Trending } from "@/components/Trending/Trend";
 
 export default function Home() {
   return (
-    <main className="max-w-[1216px] bg-white dark:text-[#D1D5DB] dark:bg-[#030712]">
+    <main className=" bg-white dark:text-[#D1D5DB] dark:bg-[#030712]">
       
       <TopHeader />
       <Trending />
