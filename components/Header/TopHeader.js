@@ -8,14 +8,14 @@ export const TopHeader = () => {
   const [articles, setArticles] = useState([]);
   
       useEffect(() => {
-          fetch(`https://dev.to/api/articles?username=copilotkit`)
-            .then((responce) => {
-              return responce.json();
-            })
-            .then((data) => {
-              setArticles(data);
-            });
+        getArticles();
       }, []);
+
+      const getArticles = async () => {
+        const response = await fetch(`https://dev.to/api/articles?username=copilotkit`)
+        const data = await response.json()
+        setArticles(data);
+      }
 
     
 

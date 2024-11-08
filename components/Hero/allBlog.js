@@ -29,7 +29,7 @@ export function AllBlog() {
     const tagArticles = await responce.json();
     setArticles(tagArticles);
     setPage(1);
-
+    
     setLoading(false);
   }
 

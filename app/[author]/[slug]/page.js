@@ -19,7 +19,7 @@ export default async function Page( {params} ) {
 
   return (
     <main>
-      <div className="container mx-auto bg-white dark:text-[#D1D5DB] dark:bg-[#111827] py-10">
+      <div className="container mx-auto bg-white dark:text-white dark:bg-[#111827] py-10">
         <div className="">
           <div className="prose mx-auto dark:text-white">{article.title}</div>
           <div className="prose mx-auto dark:text-white">{parse(article.body_html)}</div>

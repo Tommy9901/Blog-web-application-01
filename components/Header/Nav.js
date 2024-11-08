@@ -49,7 +49,7 @@ export function Nav() {
   }
 
   return (
-    <div className="container mx-auto px-8 dark:text-[#D1D5DB] dark:bg-[#030712]">
+    <div className="container mx-auto px-8 text-black  dark:text-white dark:bg-[#030712]">
       <div className="flex justify-between  rounded py-8">
         <div className="">
           <img
@@ -60,13 +60,13 @@ export function Nav() {
         </div>
 
         <div className="flex gap-[24px] py-[0] items-center">
-          <Link href={"/"} className="hidden lg:block dark:hover:text-white">
+          <Link href={"/"} className="hidden text-black lg:block dark:text-white">
             Home
           </Link>
-          <Link href={"/Blog"} className="hidden lg:block">
+          <Link href={"/Blog"} className="text-black hidden lg:block dark:text-white">
             Blog
           </Link>
-          <Link href={"/Contact"} className="hidden lg:block">
+          <Link href={"/Contact"} className="text-black hidden lg:block dark:text-white">
             Contact
           </Link>
           <div className="hidden lg:block">
@@ -113,7 +113,7 @@ export function Nav() {
               <input
                 name='q'
                 type="text"
-                className="grow dark:text-black"
+                className="grow text-black dark:text-black"
                 placeholder="Search"
               />
               <svg
@@ -177,7 +177,9 @@ export function Nav() {
                 <div className="flex flex-col gap-4 mx-3 text-gray-600 font-medium text-base ">
                   <div className="flex items-center justify-between mr-3">
                     <div>Switch Theme</div>
-                    <IoSunnyOutline onClick={modeHandler} />
+                    <div className='bg-white dark:bg-black'>
+                      <IoSunnyOutline className='bg-white dark:bg-black' onClick={modeHandler} />
+                    </div>
                   </div>
                   <button className=" py-2.5 bg-gray-900 dark:bg-white dark:text-gray-500 text-gray-50 rounded-lg text-sm font-medium">
                     <p className="font-normal text-xl">
